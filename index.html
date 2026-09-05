@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Empire Racing</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         GAME CANVAS
+    ========================================== -->
+
+    <div id="game-container"></div>
+
+
+    <!-- =========================================
+         LOADING SCREEN
+    ========================================== -->
+
+    <div id="loading-screen">
+
+        <div class="loading-content">
+
+            <div class="loading-logo">
+                EMPIRE RACING
+            </div>
+
+            <div class="loading-subtitle">
+                RACE. UPGRADE. DOMINATE.
+            </div>
+
+            <div class="loading-bar">
+                <div
+                    data-loading-progress
+                    class="loading-progress"
+                ></div>
+            </div>
+
+            <div class="loading-text">
+                LOADING...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MAIN MENU
+    ========================================== -->
+
+    <section
+        id="main-menu"
+        class="screen"
+    >
+
+        <div class="menu-overlay">
+
+            <div class="menu-content">
+
+                <div class="brand">
+
+                    <div class="brand-title">
+                        EMPIRE
+                    </div>
+
+                    <div class="brand-title accent">
+                        RACING
+                    </div>
+
+                    <div class="brand-line"></div>
+
+                    <p>
+                        RACE. UPGRADE. DOMINATE.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-buttons">
+
+                    <button
+                        id="start-race"
+                        class="menu-button primary"
+                    >
+                        START RACE
+                    </button>
+
+
+                    <button
+                        id="open-garage"
+                        class="menu-button"
+                    >
+                        GARAGE
+                    </button>
+
+
+                    <button
+                        id="reset-save"
+                        class="menu-button danger"
+                    >
+                        RESET SAVE
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GARAGE
+    ========================================== -->
+
+    <section
+        id="garage"
+        class="screen hidden"
+    ></section>
+
+
+    <!-- =========================================
+         HUD
+    ========================================== -->
+
+    <div
+        id="hud"
+        class="hidden"
+    ></div>
+
+
+    <!-- =========================================
+         PAUSE
+    ========================================== -->
+
+    <section
+        id="pause-screen"
+        class="screen hidden"
+    >
+
+        <div class="panel pause-panel">
+
+            <div class="panel-title">
+                PAUSED
+            </div>
+
+            <button
+                id="resume-game"
+                class="menu-button primary"
+            >
+                RESUME
+            </button>
+
+            <button
+                id="pause-menu"
+                class="menu-button"
+            >
+                MAIN MENU
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         RESULTS
+    ========================================== -->
+
+    <section
+        id="results-screen"
+        class="screen hidden"
+    >
+
+        <div class="panel results-panel">
+
+            <div class="panel-title">
+                RACE FINISHED
+            </div>
+
+            <div class="result-row">
+                <span>POSITION</span>
+                <strong id="result-position">-</strong>
+            </div>
+
+            <div class="result-row">
+                <span>TIME</span>
+                <strong id="result-time">-</strong>
+            </div>
+
+            <div class="result-row">
+                <span>XP</span>
+                <strong id="result-xp">+0</strong>
+            </div>
+
+            <div class="result-row">
+                <span>CREDITS</span>
+                <strong id="result-credits">+0</strong>
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button
+                    id="race-again"
+                    class="menu-button primary"
+                >
+                    RACE AGAIN
+                </button>
+
+                <button
+                    id="results-menu"
+                    class="menu-button"
+                >
+                    MAIN MENU
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MOBILE CONTROLS
+    ========================================== -->
+
+    <div
+        id="mobile-controls"
+        class="hidden"
+    >
+
+        <button
+            data-control="left"
+            class="mobile-control steering"
+        >
+            ◀
+        </button>
+
+        <button
+            data-control="right"
+            class="mobile-control steering"
+        >
+            ▶
+        </button>
+
+        <button
+            data-control="brake"
+            class="mobile-control brake"
+        >
+            BRAKE
+        </button>
+
+        <button
+            data-control="throttle"
+            class="mobile-control throttle"
+        >
+            GAS
+        </button>
+
+        <button
+            data-control="nitro"
+            class="mobile-control nitro"
+        >
+            NITRO
+        </button>
+
+    </div>
+
+
+    <!-- =========================================
+         THREE.JS
+    ========================================== -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+    }
+    </script>
+
+
+    <!-- =========================================
+         GAME
+    ========================================== -->
+
+    <script
+        type="module"
+        src="/src/main.js"
+    ></script>
+
+</body>
+</html>
